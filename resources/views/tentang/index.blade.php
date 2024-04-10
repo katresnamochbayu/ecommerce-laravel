@@ -1,13 +1,13 @@
 @extends('layout.app')
 @section('title')
-Tentang
+Data
 @endsection
 
 @section('content')
 <div class="card shadow">
     <div class="card-header">
         <h4 class="card-title">
-            Data tentang
+            tentang
         </h4>
     </div>
     <div class="card-body">

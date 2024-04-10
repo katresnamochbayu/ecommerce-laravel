@@ -18,8 +18,6 @@ class CreateCartsTable extends Migration
             $table->integer('id_member');
             $table->integer('id_barang');
             $table->integer('jumlah');
-            $table->string('size');
-            $table->string('color');
             $table->integer('total');
             $table->integer('is_checkout');
             $table->timestamps();

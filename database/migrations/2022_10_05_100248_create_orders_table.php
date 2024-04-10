@@ -26,8 +26,6 @@ class CreateOrdersTable extends Migration
             $table->integer('id_order');
             $table->integer('id_produk');
             $table->integer('jumlah');
-            $table->integer('size');
-            $table->integer('color');
             $table->integer('total');
             $table->timestamps();
         });

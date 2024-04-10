@@ -85,30 +85,6 @@
                 </span>
                 <p class="short-description">{{$product->deskripsi}}</p>
 
-                <div class="color-swatches clearfix">
-                    <span>Color:</span>
-                    @php
-                    $colours = explode(',',$product->warna);
-                    @endphp
-
-                    @foreach ($colours as $colour)
-                    <input type="radio" name="color" id="{{$colour}}" value="{{$colour}}" class="color">
-                    <label for="{{$colour}}" style="margin-right: 20px">{{$colour}}</label>
-                    @endforeach
-                </div>
-
-                <div class="size-options clearfix">
-                    <span>Size:</span>
-                    @php
-                    $sizes = explode(',',$product->ukuran);
-                    @endphp
-
-                    @foreach ($sizes as $size)
-                    <input type="radio" name="sizes" id="{{$size}}" value="{{$size}}" class="size">
-                    <label for="{{$size}}" style="margin-right: 20px">{{$size}}</label>
-                    @endforeach
-                </div>
-
                 <div class="product-actions">
                     <span>Qty:</span>
 
@@ -132,7 +108,6 @@
 
 
                 <div class="product_meta">
-                    <span class="sku">SKU: <a href="#">{{$product->sku}}</a></span>
                     <span class="brand_as">Category: <a href="#">{{$product->category->nama_kategori}}</a></span>
                     <span class="posted_in">Tags: <a href="#">{{$product->tags}}</a></span>
                 </div>
@@ -163,16 +138,7 @@
                                 <table class="table shop_attributes">
                                     <tbody>
                                         <tr>
-                                            <th>Size:</th>
-                                            <td>{{$product->ukuran}}</td>
-                                        </tr>
-                                        <tr>
-                                            <th>Colors:</th>
-                                            <td>{{$product->warna}}</td>
-                                        </tr>
-                                        <tr>
-                                            <th>Fabric:</th>
-                                            <td>{{$product->bahan}}</td>
+                                            <th>{{$product->deskripsi}}</th>
                                         </tr>
                                     </tbody>
                                 </table>

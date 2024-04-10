@@ -24,21 +24,12 @@
                                 @foreach ($carts as $cart)
                                 <input type="hidden" name="id_produk[]" value="{{$cart->product->id}}">
                                 <input type="hidden" name="jumlah[]" value="{{$cart->jumlah}}">
-                                <input type="hidden" name="size[]" value="{{$cart->size}}">
-                                <input type="hidden" name="color[]" value="{{$cart->color}}">
                                 <input type="hidden" name="total[]" value="{{$cart->total}}">
                                 <tr class="cart_item">
                                     <td class="product-thumbnail">
                                         <a href="#">
                                             <img src="/uploads/{{$cart->product->gambar}}" alt="">
                                         </a>
-                                    </td>
-                                    <td class="product-name">
-                                        <a href="#">{{$cart->product->nama_barang}}</a>
-                                        <ul>
-                                            <li>Size: {{$cart->size}}</li>
-                                            <li>Color: {{$cart->color}}</li>
-                                        </ul>
                                     </td>
                                     <td class="product-price">
                                         <span class="amount">{{ "Rp. " . number_format($cart->product->harga)}}</span>
@@ -73,6 +64,16 @@
                             </div>
                         </div>
                     </div>
+                    <div class="row mb-50">
+                        <div class="col-md-7">
+                            <div class="actions">
+                                <div class="wc-proceed-to-orders">
+                                    <a href="/orders" class="btn btn-lg btn-dark orders"><span>Data Orderan</span></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
 
                 </div> <!-- end col -->
             </div> <!-- end row -->

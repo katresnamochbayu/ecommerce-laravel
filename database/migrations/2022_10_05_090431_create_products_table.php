@@ -22,11 +22,7 @@ class CreateProductsTable extends Migration
             $table->text('deskripsi');
             $table->integer('harga');
             $table->integer('diskon');
-            $table->string('bahan');
             $table->string('tags');
-            $table->string('sku');
-            $table->string('ukuran');
-            $table->string('warna');
             $table->timestamps();
         });
     }

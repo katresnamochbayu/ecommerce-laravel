@@ -1,12 +1,12 @@
 @extends('layout.app')
 
-@section('title', 'Data Barang')
+@section('title', 'Data')
 
 @section('content')
 <div class="card shadow">
     <div class="card-header">
         <h4 class="card-title">
-            Data Barang
+            Barang
         </h4>
     </div>
     <div class="card-body">
@@ -23,10 +23,8 @@
                         <th>Nama Barang</th>
                         <th>Harga</th>
                         <th>Diskon</th>
-                        <th>Bahan</th>
-                        <th>Sku</th>
-                        <th>Ukuran</th>
-                        <th>Warna</th>
+                        <th>Tags</th>
+                        <th>Deskripsi</th>
                         <th>Gambar</th>
                         <th>Aksi</th>
                     </tr>
@@ -81,24 +79,8 @@
                                 <input type="number" class="form-control" name="diskon" placeholder="Diskon">
                             </div>
                             <div class="form-group">
-                                <label for="">Bahan</label>
-                                <input type="text" class="form-control" name="bahan" placeholder="Bahan">
-                            </div>
-                            <div class="form-group">
                                 <label for="">Tags</label>
                                 <input type="text" class="form-control" name="tags" placeholder="Tags">
-                            </div>
-                            <div class="form-group">
-                                <label for="">Sku</label>
-                                <input type="text" class="form-control" name="sku" placeholder="Sku">
-                            </div>
-                            <div class="form-group">
-                                <label for="">Warna</label>
-                                <input type="text" class="form-control" name="warna" placeholder="Warna">
-                            </div>
-                            <div class="form-group">
-                                <label for="">Ukuran</label>
-                                <input type="text" class="form-control" name="ukuran" placeholder="Ukuran">
                             </div>
                             <div class="form-group">
                                 <label for="">Deskripsi</label>
@@ -145,10 +127,8 @@
                             <td>${val.nama_barang}</td>
                             <td>${val.harga}</td>
                             <td>${val.diskon}</td>
-                            <td>${val.bahan}</td>
-                            <td>${val.sku}</td>
-                            <td>${val.ukuran}</td>
-                            <td>${val.warna}</td>
+                            <td>${val.tags}</td>
+                            <td>${val.deskripsi}</td>
                             <td><img src="/uploads/${val.gambar}" width="150"></td>
                             <td>
                                 <a href="#modal-form" data-id="${val.id}" class="btn btn-warning modal-ubah">Edit</a>
@@ -189,8 +169,13 @@
 
         $('.modal-tambah').click(function() {
             $('#modal-form').modal('show')
-            $('input[name="nama_kategori"]').val('')
-            $('textarea[name="deskripsi"]').val('')
+            $('input[name="id_kategori"]').val('');
+            $('input[name="id_subkategori"]').val('');
+            $('input[name="nama_barang"]').val('');
+            $('input[name="harga"]').val('');
+            $('input[name="diskon"]').val('');
+            $('input[name="tags"]').val('');
+            $('textarea[name="deskripsi"]').val('');
 
             $('.form-kategori').submit(function(e) {
                 e.preventDefault()
@@ -227,7 +212,12 @@
             $.get('/api/products/' + id, function({
                 data
             }) {
-                $('input[name="nama_kategori"]').val(data.nama_kategori);
+                $('input[name="id_kategori"]').val(data.id_kategori);
+                $('input[name="id_subkategori"]').val(data.id_subkategori);
+                $('input[name="nama_barang"]').val(data.nama_barang);
+                $('input[name="harga"]').val(data.harga);
+                $('input[name="diskon"]').val(data.diskon);
+                $('input[name="tags"]').val(data.tags);
                 $('textarea[name="deskripsi"]').val(data.deskripsi);
             });
 

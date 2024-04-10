@@ -48,6 +48,10 @@ class HomeController extends Controller
 
     public function product($id_product)
     {
+        if (!Auth::guard('webmember')->user()) {
+            return redirect('/login_member');
+        }
+
         $product = Product::find($id_product);
         $latest_products = Product::orderByDesc('created_at')->offset(0)->limit(10)->get();
 
@@ -63,7 +67,7 @@ class HomeController extends Controller
         $curl = curl_init();
 
         curl_setopt_array($curl, array(
-            CURLOPT_URL => "https://api.rajaongkir.com/starter/province",
+            CURLOPT_URL => "http://api.rajaongkir.com/starter/province",
             CURLOPT_RETURNTRANSFER => true,
             CURLOPT_ENCODING => "",
             CURLOPT_MAXREDIRS => 10,
@@ -96,7 +100,7 @@ class HomeController extends Controller
         $curl = curl_init();
 
         curl_setopt_array($curl, array(
-            CURLOPT_URL => "https://api.rajaongkir.com/starter/city?province=" . $id,
+            CURLOPT_URL => "http://api.rajaongkir.com/starter/city?province=" . $id,
             CURLOPT_RETURNTRANSFER => true,
             CURLOPT_ENCODING => "",
             CURLOPT_MAXREDIRS => 10,
@@ -125,7 +129,7 @@ class HomeController extends Controller
         $curl = curl_init();
 
         curl_setopt_array($curl, array(
-            CURLOPT_URL => "https://api.rajaongkir.com/starter/cost",
+            CURLOPT_URL => "http://api.rajaongkir.com/starter/cost",
             CURLOPT_RETURNTRANSFER => true,
             CURLOPT_ENCODING => "",
             CURLOPT_MAXREDIRS => 10,
@@ -166,8 +170,6 @@ class HomeController extends Controller
                 'id_order' => $id,
                 'id_produk' => $request->id_produk[$i],
                 'jumlah' => $request->jumlah[$i],
-                'size' => $request->size[$i],
-                'color' => $request->color[$i],
                 'total' => $request->total[$i],
                 'created_at' => date('Y-m-d H:i:s')
             ]);
@@ -185,7 +187,7 @@ class HomeController extends Controller
         $curl = curl_init();
 
         curl_setopt_array($curl, array(
-            CURLOPT_URL => "https://api.rajaongkir.com/starter/province",
+            CURLOPT_URL => "http://api.rajaongkir.com/starter/province",
             CURLOPT_RETURNTRANSFER => true,
             CURLOPT_ENCODING => "",
             CURLOPT_MAXREDIRS => 10,

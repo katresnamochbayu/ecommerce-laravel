@@ -1,12 +1,12 @@
 @extends('layout.app')
 
-@section('title', 'Data Subkategori')
+@section('title', 'Data')
 
 @section('content')
 <div class="card shadow">
     <div class="card-header">
         <h4 class="card-title">
-            Data Subkategori
+            Subkategori
         </h4>
     </div>
     <div class="card-body">
@@ -18,8 +18,8 @@
                 <thead>
                     <tr>
                         <th>No</th>
-                        <th>Nama Kategori</th>
                         <th>Nama Subkategori</th>
+                        <th>Nama Kategori</th>
                         <th>Deskripsi</th>
                         <th>Gambar</th>
                         <th>Aksi</th>

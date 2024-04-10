@@ -89,8 +89,7 @@
                                     <tr class="order-total">
                                         <th><strong>Order Total</strong></th>
                                         <td>
-                                            <strong><span class="amount">Rp.
-                                                    {{number_format($orders->grand_total)}}</span></strong>
+                                            <strong><span class="amount">Rp. {{number_format($orders->grand_total)}}</span></strong>
                                         </td>
                                     </tr>
                                 </tbody>

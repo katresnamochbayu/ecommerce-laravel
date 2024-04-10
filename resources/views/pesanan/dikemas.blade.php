@@ -1,12 +1,12 @@
 @extends('layout.app')
 
-@section('title', 'Data Pesanan Dikemas')
+@section('title', 'Data')
 
 @section('content')
 <div class="card shadow">
     <div class="card-header">
         <h4 class="card-title">
-            Data Pesanan Dikemas
+            Pesanan Dikemas
         </h4>
     </div>
     <div class="card-body">

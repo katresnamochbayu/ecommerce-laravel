@@ -96,8 +96,6 @@ class OrderController extends Controller
                 'id_order' => $Order['id'],
                 'id_produk' => $input['id_produk'][$i],
                 'jumlah' => $input['jumlah'][$i],
-                'size' => $input['size'][$i],
-                'color' => $input['color'][$i],
                 'total' => $input['total'][$i],
             ]);
         }
@@ -162,8 +160,6 @@ class OrderController extends Controller
                 'id_order' => $Order['id'],
                 'id_produk' => $input['id_produk'][$i],
                 'jumlah' => $input['jumlah'][$i],
-                'size' => $input['size'][$i],
-                'color' => $input['color'][$i],
                 'total' => $input['total'][$i],
             ]);
         }
